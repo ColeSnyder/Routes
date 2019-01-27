@@ -10,8 +10,9 @@ import java.util.StringTokenizer;
 
 public class Layout {
 	
-	String direction;
-	String town;
+	//String direction;
+	String townName;
+	String townZip;
 	//ArrayList <String> info = new ArrayList<String> ();
 	ArrayList <String> verticalStreet = new ArrayList<String> ();
 	ArrayList <String> horizontalStreet = new ArrayList<String> ();
@@ -72,9 +73,9 @@ public class Layout {
 
 			
 			
-			town = (String) input.get(0);
-			splitArr = town.split(":" , 2);
-			town = splitArr[1];
+			townName = (String) input.get(0);
+			splitArr = townName.split(":" , 2);
+			townName = splitArr[1];
 			
 		}
 			
@@ -88,7 +89,12 @@ public class Layout {
 	public String getTown()
 	{
 		
-		return town;
+		String[] townPart = townName.split(",", 2);
+		
+		townName = townPart[0].substring(1);
+		townZip = townPart[1];
+		
+		return townName;
 		
 		
 	}

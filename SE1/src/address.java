@@ -8,10 +8,12 @@ import javax.print.attribute.standard.JobName;
 
 	public class address {
 		String full;
-		String houseNumber;
+		int houseNumber;
 		String street;
 		String town;
-		String zip;
+		int zip;
+		boolean isVertical = false;
+		boolean isHorizontal = false;
 		
 	
 		public address(String input) 
@@ -30,7 +32,7 @@ import javax.print.attribute.standard.JobName;
 					
 					String tempadd = token.nextToken();
 					String parts[] = tempadd.split(" ", 2);
-					houseNumber = parts[0];
+					houseNumber = Integer.parseInt(parts[0]);
 					street = parts[1];					
 					counter++;
 					
@@ -43,7 +45,7 @@ import javax.print.attribute.standard.JobName;
 				}
 				else if(counter == 2)
 				{
-					zip = token.nextToken().substring(1);;
+					zip = Integer.parseInt(token.nextToken().substring(1));;
 					counter++;
 				}
 				
@@ -70,7 +72,7 @@ import javax.print.attribute.standard.JobName;
 			return full;
 			
 		}
-		public String gethouseNumber()
+		public Integer gethouseNumber()
 		{
 			return houseNumber;
 			
@@ -85,7 +87,7 @@ import javax.print.attribute.standard.JobName;
 			return town;
 			
 		}
-		public String getZip()
+		public Integer getZip()
 		{
 			return zip;
 			
