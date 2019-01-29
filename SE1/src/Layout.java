@@ -24,11 +24,6 @@ public class Layout {
 	public Layout(ArrayList input) 
 	{
 				
-		
-		
-		
-		
-
 		for(int i = 0; i < input.size(); i++)
 		{
 			String temp = (String) input.get(i);
