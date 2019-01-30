@@ -40,28 +40,13 @@ public class Layout {
 					
 					 temp = (String) input.get(i);
 				}
-				while (temp.contains("Horizontal"))
-				{
-				
-					if (!temp.isEmpty())
-					{
-						i = i + 1;
-						temp = (String) input.get(i);
 
-						if(!temp.contains("Horizontal"))
-						{
-							
-							horizontalStreet.add(temp);
-						}
-						
-						// temp = (String) input.get(i);
-						 
-						 if(i==input.size()-1) {
-							 break;
-						 }
-					}
-			
-				}
+			}
+			else
+			{
+	
+				temp = (String) input.get(i);
+				horizontalStreet.add(temp);
 				
 			}
 			
@@ -97,8 +82,26 @@ public class Layout {
 	
 	
 	
+	public void printH()
+	{
+		
+		for (int i = 0; i < horizontalStreet.size(); i++)
+		{
+			System.out.println(horizontalStreet.get(i));
+		}
+		
+		
+	}
 	
 	
+	public void printV()
+	{
+		for (int i = 0; i < verticalStreet.size(); i++)
+		{
+			System.out.println(verticalStreet.get(i));
+		}
+		
+	}
 	
 	
 	

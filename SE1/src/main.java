@@ -59,7 +59,7 @@ public class main {
 		towns.add(lay); //adding the finished arraylist of the current town to the local 'towns' arraylist
 		temp.clear(); //clearing the temp array so we can move onto the next town
 		counter = 0;
-		//System.out.println(lay.town);
+	//	System.out.println(lay.townName);
 		
 		ArrayList <String> hStreet = new ArrayList<String> (); //Arraylist for horizontal streets
 		ArrayList <String> vStreet = new ArrayList<String> (); //Arraylist for vertical streets
@@ -80,6 +80,11 @@ public class main {
 				vStreet.add(towns.get(b).verticalStreet.get(i)); //adding the vertical streets to the local vertical array list
 			}
 		}
+		
+		
+		
+		
+
 		
 //		for(int b = 0; b < hStreet.size(); b++)
 //		{
@@ -114,25 +119,49 @@ public class main {
 					}
 				}
 			}
+			System.out.println();
+			for (int j = 0; j < houses.size(); j++) //iterating through arraylist from layout
+			{
+				if(houses.get(j).getTown().contains(currentTown)) //making sure we get each town only once
+				{
+					for(int z = 0; z < hStreet.size(); z++) // Iterating through the vertical streets
+					{
+						if (hStreet.get(z).contains(houses.get(j).street)) //if the current street matches the current address in the houses arraylist
+						{
+							System.out.println(houses.get(j).full); 
+						}	
+					}
+					
+				}
+			}
 			
 			//System.out.println("Horizontal");
 			System.out.println("");
-			for (int j = 0; j < houses.size(); j++) //iterating through arraylist from layout
-			{	
-				for(int b = 0; b < hStreet.size(); b++) // Iterating through the Horizontal streets
-				{
-					if (hStreet.get(b).contains(houses.get(j).street)) //if the current street matches the current address in the houses arraylist
-					{
-						System.out.println(houses.get(j).full);
-					}
-				}
-			}
+//			for (int j = 0; j < houses.size(); j++) //iterating through arraylist from layout
+//			{	
+//				for(int b = 0; b < hStreet.size(); b++) // Iterating through the Horizontal streets
+//				{
+//					if (hStreet.get(b).contains(houses.get(j).street)) //if the current street matches the current address in the houses arraylist
+//					{
+//						System.out.println(houses.get(j).full);
+//					}
+//				}
+//			}
 			System.out.println("");
 			System.out.println("");
 			System.out.println("");
 		}
 		
 		System.out.println();
+//		for (int i = 0; i < towns.size(); i++)
+//		{
+//			towns.get(i).printH();
+//		}
+//		System.out.println();
+//		for (int i = 0; i < towns.size(); i++)
+//		{
+//			towns.get(i).printV();
+//		}
 		
 		//System.out.println(hStreet.get(1));
 	}
