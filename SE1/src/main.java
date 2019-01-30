@@ -120,7 +120,7 @@ public class main {
 				}
 			}
 			System.out.println();
-			for (int j = 0; j < houses.size(); j++) //iterating through arraylist from layout
+			for (int j = houses.size() - 1; j > 0; j--) //iterating through arraylist from layout
 			{
 				if(houses.get(j).getTown().contains(currentTown)) //making sure we get each town only once
 				{

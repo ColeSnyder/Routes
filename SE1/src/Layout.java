@@ -52,7 +52,6 @@ public class Layout {
 			
 
 			
-			
 			townName = (String) input.get(0);
 			splitArr = townName.split(":" , 2);
 			townName = splitArr[1];
